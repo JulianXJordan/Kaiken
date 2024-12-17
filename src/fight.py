@@ -10,7 +10,7 @@ pygame.init()
 # Constants
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
 FPS = 60
-ASSET_PATH = r'C:\Users\realm\OneDrive\Desktop\run'
+ASSET_PATH = r'./assets/'
 
 # Colors
 WHITE = (255, 255, 255)
@@ -31,7 +31,7 @@ font_small = pygame.font.Font(None, 36)
 MODES = ["Arcade", "Adventure", "Team Battle", "Tournament"]
 
 def load_asset(filename):
-    return pygame.image.load(os.path.join(ASSET_PATH, filename))
+    return pygame.image.load(os.path.join(ASSET_PATH + 'images', filename))
 
 # Character assets (portraits and sprites)
 character_portraits = [f"character_{i}.png" for i in range(1, 9)]
@@ -84,7 +84,7 @@ for i in range(0, 4):
     ai_portraits_battle[i] = pygame.transform.flip(ai_portraits_battle[i], True, False)
 
 # Load audio
-pygame.mixer.music.load(os.path.join(ASSET_PATH, "epic_theme.mp3"))
+pygame.mixer.music.load(os.path.join(ASSET_PATH + 'sound', "epic_theme.mp3"))
 pygame.mixer.music.play(-1)
 
 # Load backgrounds
